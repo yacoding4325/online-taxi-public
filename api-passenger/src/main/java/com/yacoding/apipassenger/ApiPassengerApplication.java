@@ -2,6 +2,8 @@ package com.yacoding.apipassenger;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 /**
  * @Author yaCoding
@@ -9,8 +11,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 //启动类
 @SpringBootApplication
-//@EnableDiscoveryClient
-//@EnableFeignClients
+@EnableDiscoveryClient
+@EnableFeignClients
 public class ApiPassengerApplication {
 
     public static void main(String[] args) {

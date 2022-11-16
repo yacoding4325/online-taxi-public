@@ -1,9 +1,11 @@
 package com.yacoding.apipassenger.service;
 
 //import com.yacoding.apipassenger.remote.ServiceVefificationcodeClient;
+import com.yacoding.apipassenger.remote.ServiceVefificationcodeClient;
 import com.yacoding.internalcommon.dto.ResponseResult;
 import com.yacoding.internalcommon.request.VerificationCodeDTO;
 import com.yacoding.internalcommon.responese.NumberCodeResponse;
+import net.sf.json.JSONObject;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -20,8 +22,8 @@ import java.util.concurrent.TimeUnit;
 @Service
 public class VerificationCodeService {
 
-//    @Autowired
-//    private ServiceVefificationcodeClient serviceVefificationcodeClient;
+    @Autowired
+    private ServiceVefificationcodeClient serviceVefificationcodeClient;
 
     @Autowired
     private StringRedisTemplate stringRedisTemplate;
@@ -31,20 +33,26 @@ public class VerificationCodeService {
      * @param passengerPhone 手机号
      * @return
      */
-//    public ResponseResult generatorCode(String passengerPhone) {
-//        // 调用验证码服务，获取验证码
-//        ResponseResult<NumberCodeResponse> numberCodeResponse = serviceVefificationcodeClient.getNumberCode(6);
-//        int numberCode = numberCodeResponse.getData().getNumberCode();
-//
+    public /*ResponseResult*/String generatorCode(String passengerPhone) {
+        // 调用验证码服务，获取验证码
+        ResponseResult<NumberCodeResponse> numberCodeResponse = serviceVefificationcodeClient.getNumberCode(6);
+        int numberCode = numberCodeResponse.getData().getNumberCode();
+
+        System.out.println("remote number code" + numberCode);
 //        //存入redis
 //        //key,value，过期时间
 //        String key = RedisPrefixUtils.generatorKeyByPhone(passengerPhone,IdentityConstants.PASSENGER_IDENTITY) ;
 //        //存入redis
+        System.out.println("存入redis");
 //        stringRedisTemplate.opsForValue().set(key,numberCode+"",2, TimeUnit.MINUTES);
-//
-//        // 通过短信服务商，将对应的验证码发送到手机上。阿里短信服务，腾讯短信通，华信，容联
+        JSONObject result = new JSONObject();
+        result.put("code", 1);
+        result.put("message","success");
+        return result.toString();
+        // 通过短信服务商，将对应的验证码发送到手机上。阿里短信服务，腾讯短信通，华信，容联
 //        return ResponseResult.success("");
-//    }
+
+    }
 
 //    @Autowired
 //    private ServicePassengerUserClient servicePassengerUserClient;
