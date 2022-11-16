@@ -1,6 +1,8 @@
 package com.yacoding.apipassenger.controller;
 
 import com.yacoding.apipassenger.service.VerificationCodeService;
+import com.yacoding.internalcommon.dto.ResponseResult;
+import com.yacoding.internalcommon.request.VerificationCodeDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,22 +19,22 @@ public class VerificationCodeController {
     @Autowired
     private VerificationCodeService verificationCodeService;
 
-    @GetMapping("/verification-code")
-    public ResponseResult verificationCode(@RequestBody VerificationCodeDTO verificationCodeDTO){
-
-        String passengerPhone = verificationCodeDTO.getPassengerPhone();
-        return verificationCodeService.generatorCode(passengerPhone);
-
-    }
-
-    @PostMapping("/verification-code-check")
-    public ResponseResult checkVerificationCode(@RequestBody VerificationCodeDTO verificationCodeDTO){
-
-        String passengerPhone = verificationCodeDTO.getPassengerPhone();
-        String verificationCode = verificationCodeDTO.getVerificationCode();
-
-        System.out.println("手机号"+passengerPhone+",验证码："+verificationCode);
-
-        return verificationCodeService.checkCode(passengerPhone,verificationCode);
-    }
+//    @GetMapping("/verification-code")
+//    public ResponseResult verificationCode(@RequestBody VerificationCodeDTO verificationCodeDTO){
+//
+//        String passengerPhone = verificationCodeDTO.getPassengerPhone();
+//        return verificationCodeService.generatorCode(passengerPhone);
+//
+//    }
+//
+//    @PostMapping("/verification-code-check")
+//    public ResponseResult checkVerificationCode(@RequestBody VerificationCodeDTO verificationCodeDTO){
+//
+//        String passengerPhone = verificationCodeDTO.getPassengerPhone();
+//        String verificationCode = verificationCodeDTO.getVerificationCode();
+//
+//        System.out.println("手机号"+passengerPhone+",验证码："+verificationCode);
+//
+//        return verificationCodeService.checkCode(passengerPhone,verificationCode);
+//    }
 }
