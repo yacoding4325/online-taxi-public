@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="api-passenger" />
         <module name="internal-common" />
+        <module name="service-verificationcode" />
       </profile>
     </annotationProcessing>
   </component>
@@ -16,6 +17,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="api-passenger" options="-parameters" />
       <module name="internal-common" options="-parameters" />
+      <module name="service-verificationcode" options="-parameters" />
     </option>
   </component>
 </project>
