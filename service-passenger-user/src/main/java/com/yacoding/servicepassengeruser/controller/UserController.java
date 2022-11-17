@@ -14,16 +14,14 @@ public class UserController {
 
     @PostMapping("/user")
     public ResponseResult loginOrRegister(@RequestBody VerificationCodeDTO verificationCodeDTO){
-
         String passengerPhone = verificationCodeDTO.getPassengerPhone();
         System.out.println("手机号："+passengerPhone);
         return userService.loginOrRegister(passengerPhone);
-
     }
 
-    @GetMapping("/user/{phone}")
-    public ResponseResult getUser(@PathVariable("phone") String passengerPhone){
-        System.out.println("service-passenger-user: phone:"+passengerPhone);
-        return userService.getUserByPhone(passengerPhone);
-    }
+//    @GetMapping("/user/{phone}")
+//    public ResponseResult getUser(@PathVariable("phone") String passengerPhone){
+//        System.out.println("service-passenger-user: phone:"+passengerPhone);
+//        return userService.getUserByPhone(passengerPhone);
+//    }
 }
