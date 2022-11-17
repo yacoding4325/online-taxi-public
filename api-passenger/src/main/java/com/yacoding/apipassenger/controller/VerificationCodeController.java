@@ -27,14 +27,14 @@ public class VerificationCodeController {
 //
 //    }
 //
-//    @PostMapping("/verification-code-check")
-//    public ResponseResult checkVerificationCode(@RequestBody VerificationCodeDTO verificationCodeDTO){
-//
-//        String passengerPhone = verificationCodeDTO.getPassengerPhone();
-//        String verificationCode = verificationCodeDTO.getVerificationCode();
-//
-//        System.out.println("手机号"+passengerPhone+",验证码："+verificationCode);
-//
-//        return verificationCodeService.checkCode(passengerPhone,verificationCode);
-//    }
+    @PostMapping("/verification-code-check")
+    public ResponseResult checkVerificationCode(@RequestBody VerificationCodeDTO verificationCodeDTO){
+
+        String passengerPhone = verificationCodeDTO.getPassengerPhone();
+        String verificationCode = verificationCodeDTO.getVerificationCode();
+
+        System.out.println("手机号"+passengerPhone+",验证码："+verificationCode);
+
+        return verificationCodeService.checkCode(passengerPhone,verificationCode);
+    }
 }
