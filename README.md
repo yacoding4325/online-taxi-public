@@ -1,28 +1,5 @@
 # online-taxi-public
 
-[网络预约出租汽车技术要求.pdf](https://github.com/yacoding4325/online-taxi-public/files/10049544/default.pdf)
-## 项目业务架构图
-![image](https://user-images.githubusercontent.com/82166879/202900445-4d15e0ab-57e7-4443-b474-e821a3a576ec.png)
-
-1.需求
-
-2.业务架构
-
-3.技术架构
-
-4.工程设计
-
-5.DB设计
-
-6.业务代码
-
-7.单元测试
-
-8.压力测试
-
-8.优化
-
-9.运维
 项目过程
 启动
 可行性分析，立项。项目背景：面试：（背景，为什么做？残障人士（后备箱有轮椅），孕妇（开车比较稳司机），小孩（儿童座椅））。
@@ -121,3 +98,28 @@ x轴：水平复制。A A A A A。
 y轴：A
 
 z轴：数据分片：手机，衣服，家电。； 杭州，北京。盘古。
+
+
+[网络预约出租汽车技术要求.pdf](https://github.com/yacoding4325/online-taxi-public/files/10049544/default.pdf)
+## 项目业务架构图
+![image](https://user-images.githubusercontent.com/82166879/202900445-4d15e0ab-57e7-4443-b474-e821a3a576ec.png)
+
+1.需求
+
+2.业务架构
+
+3.技术架构
+
+4.工程设计
+
+5.DB设计
+
+6.业务代码
+
+7.单元测试
+
+8.压力测试
+
+8.优化
+
+9.运维
