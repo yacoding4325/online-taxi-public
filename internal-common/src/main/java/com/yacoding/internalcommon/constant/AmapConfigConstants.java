@@ -4,6 +4,7 @@ package com.yacoding.internalcommon.constant;
  * @Author yaCoding
  * @create 2022-11-20 下午 4:11
  */
+//地点查询
 //https://restapi.amap.com/v3/direction/driving?origin=116.45925,39.910031&destination=116.587922,40.081577&output=json&key=a509233cb5a717b62f3430d3760ced92
 public class AmapConfigConstants {
     /**
@@ -69,5 +70,6 @@ public class AmapConfigConstants {
     public static final String LEVEL = "level";
 
     public static final String STREET = "street";
+
 }
 

@@ -58,9 +58,7 @@ public class DicDistrictService {
                     String cityAddressName = cityJsonObject.getString(AmapConfigConstants.NAME);
                     String cityParentAddressCode = proviceAddressCode;
                     String cityLevel = cityJsonObject.getString(AmapConfigConstants.LEVEL);
-
                     insertDicDistrict(cityAddressCode,cityAddressName,cityLevel,cityParentAddressCode);
-
                     JSONArray districtArray = cityJsonObject.getJSONArray(AmapConfigConstants.DISTRICTS);
                     for (int d = 0;d< districtArray.size();d++){
                         JSONObject districtJsonObject = districtArray.getJSONObject(d);
