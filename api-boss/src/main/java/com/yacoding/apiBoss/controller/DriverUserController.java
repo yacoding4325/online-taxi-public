@@ -1,6 +1,8 @@
 package com.yacoding.apiBoss.controller;
 
+import com.yacoding.apiBoss.service.CarService;
 import com.yacoding.apiBoss.service.DriverUserService;
+import com.yacoding.internalcommon.dto.Car;
 import com.yacoding.internalcommon.dto.DriverUser;
 import com.yacoding.internalcommon.dto.ResponseResult;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +29,14 @@ public class DriverUserController {
     @PostMapping("/driver-user")
     public ResponseResult addDriverUser(@RequestBody DriverUser driverUser){
         return driverUserService.addDriverUser(driverUser);
+    }
+
+    @Autowired
+    CarService carService;
+
+    @PostMapping("/car")
+    public ResponseResult car(@RequestBody Car car){
+        return carService.addCar(car);
     }
 
 }

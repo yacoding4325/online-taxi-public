@@ -1,5 +1,6 @@
 package com.yacoding.apiBoss.remote;
 
+import com.yacoding.internalcommon.dto.Car;
 import com.yacoding.internalcommon.dto.DriverUser;
 import com.yacoding.internalcommon.dto.ResponseResult;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -17,5 +18,8 @@ public interface ServiceDriverUserClient {
 
     @RequestMapping(method = RequestMethod.POST, value = "/user")
     public ResponseResult addDriverUser(@RequestBody DriverUser driverUser);
+
+    @RequestMapping(method = RequestMethod.POST, value = "/car")
+    public ResponseResult addCar(@RequestBody Car car);
 
 }
