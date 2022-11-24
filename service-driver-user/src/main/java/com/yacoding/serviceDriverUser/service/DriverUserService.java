@@ -1,15 +1,20 @@
 package com.yacoding.serviceDriverUser.service;
 
+import com.yacoding.internalcommon.constant.CommonStatusEnum;
 import com.yacoding.internalcommon.constant.DriverCarConstants;
 import com.yacoding.internalcommon.dto.DriverUser;
 import com.yacoding.internalcommon.dto.DriverUserWorkStatus;
 import com.yacoding.internalcommon.dto.ResponseResult;
 import com.yacoding.serviceDriverUser.mapper.DriverUserMapper;
 import com.yacoding.serviceDriverUser.mapper.DriverUserWorkStatusMapper;
+import jdk.internal.dynalink.linker.LinkerServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @Author yaCoding
@@ -55,6 +60,18 @@ public class DriverUserService {
         driverUser.setGmtModified(now);
         driverUserMapper.updateById(driverUser);
         return ResponseResult.success("");
+    }
+
+    public ResponseResult<DriverUser> getDriverUserByPhone(String driverPhone) {
+        Map<String,Object> map = new HashMap<>();
+        map.put("driver_phone",driverPhone);
+        map.put("state",DriverCarConstants.DRIVER_STATE_VALID);
+        List<DriverUser> driverUsers = driverUserMapper.selectByMap(map);
+        if (driverUsers.isEmpty()) {
+            return ResponseResult.fail(CommonStatusEnum.DRIVER_NOT_EXITST.getCode(),CommonStatusEnum.DRIVER_NOT_EXITST.getValue());
+        }
+        DriverUser driverUser = driverUsers.get(0);
+        return ResponseResult.success(driverUser);
     }
 
 }
