@@ -19,9 +19,6 @@ public class DriverUserService {
     @Autowired
     private ServiceDriverUserClient serviceDriverUserClient;
 
-    @Autowired
-    private DriverUserMapper driverUserMapper;
-
     /**
      * 添加司机
      * @param driverUser
@@ -32,9 +29,7 @@ public class DriverUserService {
     }
 
     public ResponseResult updateDriverUser(DriverUser driverUser){
-        LocalDateTime now = LocalDateTime.now();
-        driverUser.setGmtModified(now);
-        driverUserMapper.updateById(driverUser);
-        return ResponseResult.success("");
+        return serviceDriverUserClient.updateDriverUser(driverUser);
     }
+
 }

@@ -22,4 +22,7 @@ public interface ServiceDriverUserClient {
     @RequestMapping(method = RequestMethod.POST, value = "/car")
     public ResponseResult addCar(@RequestBody Car car);
 
+    @RequestMapping(method = RequestMethod.PUT, value = "/user")
+    public ResponseResult updateDriverUser(@RequestBody DriverUser driverUser);
+
 }
