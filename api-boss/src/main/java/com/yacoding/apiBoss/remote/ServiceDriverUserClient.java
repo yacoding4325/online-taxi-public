@@ -1,6 +1,7 @@
 package com.yacoding.apiBoss.remote;
 
 import com.yacoding.internalcommon.dto.Car;
+import com.yacoding.internalcommon.dto.DriverCarBindingRelationship;
 import com.yacoding.internalcommon.dto.DriverUser;
 import com.yacoding.internalcommon.dto.ResponseResult;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -24,5 +25,11 @@ public interface ServiceDriverUserClient {
 
     @RequestMapping(method = RequestMethod.PUT, value = "/user")
     public ResponseResult updateDriverUser(@RequestBody DriverUser driverUser);
+
+    @RequestMapping(method = RequestMethod.POST,value = "/driver-car-binding-relationship/bind")
+    ResponseResult bind(DriverCarBindingRelationship driverCarBindingRelationship);
+
+    @RequestMapping(method = RequestMethod.POST,value = "/driver-car-binding-relationship/unbind")
+    ResponseResult unbind(DriverCarBindingRelationship driverCarBindingRelationship);
 
 }
