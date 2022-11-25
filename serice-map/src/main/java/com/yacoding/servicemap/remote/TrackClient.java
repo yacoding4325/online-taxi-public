@@ -54,8 +54,7 @@ public class TrackClient {
         TrackResponse trackResponse = new TrackResponse();
         trackResponse.setTrid(trid);
         trackResponse.setTrname(trname);
-
-
         return ResponseResult.success(trackResponse);
     }
+
 }
