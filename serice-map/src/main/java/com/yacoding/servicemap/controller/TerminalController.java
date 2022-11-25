@@ -51,4 +51,5 @@ public class TerminalController {
     public ResponseResult<TrsearchResponse> trsearch(String tid, Long starttime , Long endtime){
         return terminalService.trsearch(tid,starttime,endtime);
     }
+
 }

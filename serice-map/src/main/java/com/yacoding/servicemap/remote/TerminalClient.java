@@ -114,8 +114,6 @@ public class TerminalClient {
             terminalResponseList.add(terminalResponse);
         }
 
-
-
         return ResponseResult.success(terminalResponseList);
     }
 
