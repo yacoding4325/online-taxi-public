@@ -40,11 +40,9 @@ public class CarService {
         ResponseResult<TrackResponse> trackResponseResponseResult = serviceMapClient.addTrack(tid);
         String trid = trackResponseResponseResult.getData().getTrid();
         String trname = trackResponseResponseResult.getData().getTrname();
-
         car.setTrid(trid);
         car.setTrname(trname);
         carMapper.updateById(car);
-
         return ResponseResult.success("");
     }
 }

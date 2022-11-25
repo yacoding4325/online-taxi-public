@@ -178,7 +178,6 @@ public class Car {
      */
     private String trname;
 
-
     /**
      * 创建时间
      */

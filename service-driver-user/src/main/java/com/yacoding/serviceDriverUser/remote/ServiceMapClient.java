@@ -19,6 +19,7 @@ public interface ServiceMapClient {
     @RequestMapping(method = RequestMethod.POST, value = "/track/add")
     public ResponseResult<TrackResponse> addTrack(@RequestParam String tid);
 
+
     @RequestMapping(method = RequestMethod.POST, value = "/terminal/add")
     public ResponseResult<TerminalResponse> addTerminal(@RequestParam String name , @RequestParam String desc);
 
