@@ -1,12 +1,11 @@
 package com.yacoding.apiDriver.remote;
 
+import com.yacoding.internalcommon.dto.Car;
 import com.yacoding.internalcommon.dto.DriverUser;
 import com.yacoding.internalcommon.dto.ResponseResult;
 import com.yacoding.internalcommon.responese.DriverUserExistsResponse;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @Author yaCoding
@@ -19,6 +18,9 @@ public interface ServiceDriverUserClient {
     public ResponseResult updateUser(@RequestBody DriverUser driverUser);
 
     @RequestMapping(method = RequestMethod.GET, value = "/check-driver/{driverPhone}")
-    ResponseResult<DriverUserExistsResponse> checkDriver(String driverPhone);
+    public ResponseResult<DriverUserExistsResponse> checkDriver(@PathVariable("driverPhone") String driverPhone);
+
+    @RequestMapping(method = RequestMethod.GET, value = "/car")
+    public ResponseResult<Car> getCarById(@RequestParam Long carId);
 
 }
