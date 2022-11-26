@@ -57,7 +57,6 @@ public class PointClient {
             url.append("%22locatetime%22");
             url.append("%3A");
             url.append(locatetime);
-
             url.append("%7D");
         }
         url.append("%5D");
@@ -65,7 +64,7 @@ public class PointClient {
         System.out.println("上传位置请求："+url.toString());
         ResponseEntity<String> stringResponseEntity = restTemplate.postForEntity(URI.create(url.toString()), null, String.class);
         System.out.println("上传位置响应："+stringResponseEntity.getBody());
-
         return ResponseResult.success();
+
     }
 }

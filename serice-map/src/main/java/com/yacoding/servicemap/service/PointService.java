@@ -13,7 +13,7 @@ public class PointService {
     PointClient pointClient;
 
     public ResponseResult upload(PointRequest pointRequest){
-
         return pointClient.upload(pointRequest);
     }
+
 }

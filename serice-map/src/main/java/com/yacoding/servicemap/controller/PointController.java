@@ -20,4 +20,5 @@ public class PointController {
     public ResponseResult upload(@RequestBody PointRequest pointRequest){
         return pointService.upload(pointRequest);
     }
+
 }

@@ -7,6 +7,7 @@ package com.yacoding.internalcommon.constant;
 //地点查询
 //https://restapi.amap.com/v3/direction/driving?origin=116.45925,39.910031&destination=116.587922,40.081577&output=json&key=a509233cb5a717b62f3430d3760ced92
 public class AmapConfigConstants {
+
     /**
      * 路径规划地址
      */
