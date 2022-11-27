@@ -20,14 +20,14 @@ public interface ServiceDriverUserClient {
     @RequestMapping(method = RequestMethod.POST, value = "/user")
     public ResponseResult addDriverUser(@RequestBody DriverUser driverUser);
 
-    @RequestMapping(method = RequestMethod.POST, value = "/car")
-    public ResponseResult addCar(@RequestBody Car car);
-
     @RequestMapping(method = RequestMethod.PUT, value = "/user")
     public ResponseResult updateDriverUser(@RequestBody DriverUser driverUser);
 
+    @RequestMapping(method = RequestMethod.POST, value = "/car")
+    public ResponseResult addCar(@RequestBody Car car);
+
     @RequestMapping(method = RequestMethod.POST,value = "/driver-car-binding-relationship/bind")
-    ResponseResult bind(DriverCarBindingRelationship driverCarBindingRelationship);
+    public ResponseResult bind(@RequestBody DriverCarBindingRelationship driverCarBindingRelationship);
 
     @RequestMapping(method = RequestMethod.POST,value = "/driver-car-binding-relationship/unbind")
     ResponseResult unbind(DriverCarBindingRelationship driverCarBindingRelationship);
