@@ -1,19 +1,17 @@
 package com.yacoding.apiBoss.controller;
 
+import com.yacoding.apiBoss.service.DriverCarBindingRelationshipService;
 import com.yacoding.internalcommon.dto.DriverCarBindingRelationship;
 import com.yacoding.internalcommon.dto.ResponseResult;
-import com.yacoding.serviceDriverUser.service.DriverCarBindingRelationshipService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.annotation.Resource;
-
 /**
  * @Author yaCoding
- * @create 2022-11-24 下午 5:59
+ * @create 2022-11-27 下午 3:16
  */
 
 @RestController
@@ -32,5 +30,4 @@ public class DriverCarBindingRelationshipController {
     public ResponseResult unbind(@RequestBody DriverCarBindingRelationship driverCarBindingRelationship){
         return driverCarBindingRelationshipService.unbind(driverCarBindingRelationship);
     }
-
 }
