@@ -1,6 +1,6 @@
 package com.yacoding.serviceorder.mapper;
 
-import com.yacoding.serviceorder.entity.OrderInfo;
+import com.yacoding.internalcommon.dto.OrderInfo;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
