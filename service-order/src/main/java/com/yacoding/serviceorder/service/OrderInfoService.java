@@ -1,6 +1,7 @@
 package com.yacoding.serviceorder.service;
 
 import com.yacoding.internalcommon.constant.CommonStatusEnum;
+import com.yacoding.internalcommon.dto.PriceRule;
 import com.yacoding.internalcommon.dto.ResponseResult;
 import com.yacoding.internalcommon.request.OrderRequest;
 import com.yacoding.internalcommon.request.PriceRuleIsNewRequest;
@@ -9,6 +10,7 @@ import com.yacoding.serviceorder.mapper.OrderInfoMapper;
 import com.yacoding.serviceorder.remote.ServiceDriverUserClient;
 import com.yacoding.serviceorder.remote.ServicePriceClient;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.ibatis.type.SimpleTypeRegistry;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
@@ -53,7 +55,32 @@ public class OrderInfoService {
         if (isBlackDevice(orderRequest)) {
             return ResponseResult.fail(CommonStatusEnum.DEVICE_IS_BLACK.getCode(), CommonStatusEnum.DEVICE_IS_BLACK.getValue());
         }
+
+        //判断：下单的城市和计价规则是否正常
+        if(!isPriceRuleExists(orderRequest)){
+            return ResponseResult.fail(CommonStatusEnum.CITY_SERVICE_NOT_SERVICE.getCode(),CommonStatusEnum.CITY_SERVICE_NOT_SERVICE.getValue());
+        }
+
         return ResponseResult.success();
+    }
+
+    /**
+     * 计价规则是否存在
+     * @param orderRequest
+     * @return
+     */
+    private boolean isPriceRuleExists(OrderRequest orderRequest) {
+        String fareType = orderRequest.getFareType();
+        int index = fareType.indexOf("$");
+        String cityCode = fareType.substring(0, index);
+        String vehicleType = fareType.substring(index + 1);
+
+        PriceRule priceRule = new PriceRule();
+        priceRule.setCityCode(cityCode);
+        priceRule.setVehicleType(vehicleType);
+
+        ResponseResult<Boolean> booleanResponseResult = servicePriceClient.ifPriceExists(priceRule);
+        return booleanResponseResult.getData();
     }
 
     /**
