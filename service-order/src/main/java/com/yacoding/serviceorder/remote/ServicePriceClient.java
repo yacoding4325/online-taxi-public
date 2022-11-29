@@ -4,10 +4,7 @@ import com.yacoding.internalcommon.dto.PriceRule;
 import com.yacoding.internalcommon.dto.ResponseResult;
 import com.yacoding.internalcommon.request.PriceRuleIsNewRequest;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @Author yaCoding
@@ -22,4 +19,8 @@ public interface ServicePriceClient {
 
     @RequestMapping(method = RequestMethod.GET,value = "/price-rule/if-exists")
     ResponseResult<Boolean> ifPriceExists(@RequestBody PriceRule priceRule);
+
+    @RequestMapping(method = RequestMethod.POST, value = "/calculate-price")
+    public ResponseResult<Double> calculatePrice(@RequestParam Integer distance , @RequestParam Integer duration, @RequestParam String cityCode, @RequestParam String vehicleType);
+
 }
