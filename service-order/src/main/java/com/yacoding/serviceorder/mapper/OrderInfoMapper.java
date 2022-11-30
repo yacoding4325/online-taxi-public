@@ -2,6 +2,7 @@ package com.yacoding.serviceorder.mapper;
 
 import com.yacoding.internalcommon.dto.OrderInfo;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.springframework.stereotype.Repository;
 
 /**
  * <p>
@@ -11,6 +12,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author yacoding
  * @since 2022-11-29
  */
+@Repository
 public interface OrderInfoMapper extends BaseMapper<OrderInfo> {
 
 }

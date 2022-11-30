@@ -22,7 +22,6 @@ import com.yacoding.serviceorder.remote.ServiceSsePushClient;
 import lombok.extern.slf4j.Slf4j;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
-import org.apache.ibatis.type.SimpleTypeRegistry;
 import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;
 import org.springframework.beans.BeanUtils;
@@ -41,7 +40,7 @@ import java.util.concurrent.TimeUnit;
  * @Author yaCoding
  * @create 2022-11-29 下午 7:44
  */
-
+//@SuppressWarnings({"all"})
 @Service
 @Slf4j
 public class OrderInfoService {
