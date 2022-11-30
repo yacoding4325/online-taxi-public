@@ -30,6 +30,7 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import javax.annotation.Resource;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 import java.util.ArrayList;
@@ -131,7 +132,7 @@ public class OrderInfoService {
     @Autowired
     ServiceMapClient serviceMapClient;
 
-    @Autowired
+    @Autowired(required = false)
     RedissonClient redissonClient;
 
     @Autowired
