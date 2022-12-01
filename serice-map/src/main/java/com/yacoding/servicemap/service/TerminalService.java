@@ -5,12 +5,14 @@ import com.yacoding.internalcommon.dto.ResponseResult;
 import com.yacoding.internalcommon.responese.TerminalResponse;
 import com.yacoding.internalcommon.responese.TrsearchResponse;
 import com.yacoding.servicemap.remote.TerminalClient;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@Slf4j
 public class TerminalService {
 
     @Autowired

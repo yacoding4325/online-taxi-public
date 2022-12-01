@@ -6,12 +6,14 @@ import com.yacoding.internalcommon.dto.DicDistrict;
 import com.yacoding.internalcommon.dto.ResponseResult;
 import com.yacoding.servicemap.mapper.DicDistrictMapper;
 import com.yacoding.servicemap.remote.MapDicDistrictClient;
+import lombok.extern.slf4j.Slf4j;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
+@Slf4j
 public class DicDistrictService {
 
     @Autowired
