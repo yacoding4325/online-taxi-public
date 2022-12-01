@@ -4,6 +4,7 @@ import com.yacoding.internalcommon.constant.DriverCarConstants;
 import com.yacoding.internalcommon.dto.DriverUser;
 import com.yacoding.internalcommon.dto.ResponseResult;
 import com.yacoding.internalcommon.responese.DriverUserExistsResponse;
+import com.yacoding.internalcommon.responese.OrderDriverResponse;
 import com.yacoding.serviceDriverUser.service.DriverUserService;
 import lombok.extern.slf4j.Slf4j;
 import net.sf.json.JSONObject;
@@ -64,6 +65,16 @@ public class UserController {
             response.setIfExists(ifExists);
         }
         return ResponseResult.success(response);
+    }
+
+    /**
+     * 根据车辆Id查询订单需要的司机信息
+     * @param carId
+     * @return
+     */
+    @GetMapping("/get-available-driver/{carId}")
+    public ResponseResult<OrderDriverResponse> getAvailableDriver(@PathVariable("carId") Long carId){
+        return driverUserService.getAvailableDriver(carId);
     }
 
 }
