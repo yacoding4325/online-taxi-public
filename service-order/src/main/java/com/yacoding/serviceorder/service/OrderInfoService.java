@@ -132,7 +132,7 @@ public class OrderInfoService {
     @Autowired
     ServiceMapClient serviceMapClient;
 
-    @Autowired(required = false)
+    @Autowired
     RedissonClient redissonClient;
 
     @Autowired
