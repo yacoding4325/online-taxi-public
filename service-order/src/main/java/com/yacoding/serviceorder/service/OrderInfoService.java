@@ -253,6 +253,7 @@ public class OrderInfoService {
                     passengerContent.put("driverId",orderInfo.getDriverId());
                     passengerContent.put("driverPhone",orderInfo.getDriverPhone());
                     passengerContent.put("vehicleNo",orderInfo.getVehicleNo());
+
                     // 车辆信息，调用车辆服务
                     ResponseResult<Car> carById = serviceDriverUserClient.getCarById(carId);
                     Car carRemote = carById.getData();
