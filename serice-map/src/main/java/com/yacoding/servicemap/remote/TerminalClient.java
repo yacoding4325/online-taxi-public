@@ -150,7 +150,6 @@ public class TerminalClient {
 
             long distance = jsonObject.getLong("distance");
             driveMile = driveMile + distance;
-
             long time = jsonObject.getLong("time");
             time = time / (1000 * 60);
             driveTime = driveTime + time;
