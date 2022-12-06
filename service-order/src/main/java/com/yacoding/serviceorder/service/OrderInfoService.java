@@ -458,6 +458,7 @@ public class OrderInfoService {
         orderInfo.setPassengerGetoffLatitude(orderRequest.getPassengerGetoffLatitude());
 
         orderInfo.setOrderStatus(OrderConstants.PASSENGER_GETOFF);
+
         // 订单行驶的路程和时间,调用 service-map
         ResponseResult<Car> carById = serviceDriverUserClient.getCarById(orderInfo.getCarId());
         Long starttime = orderInfo.getPickUpPassengerTime().toInstant(ZoneOffset.of("+8")).toEpochMilli();
