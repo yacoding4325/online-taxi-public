@@ -20,4 +20,12 @@ public interface ServiceOrderClient {
      */
     @RequestMapping(method = RequestMethod.POST,value = "/order/to-pick-up-passenger")
     ResponseResult toPickUpPassenger(@RequestBody OrderRequest orderRequest);
+
+    /**
+     * 到达乘客上车点
+     * @param orderRequest
+     * @return
+     */
+    @RequestMapping(method = RequestMethod.POST, value = "/order/arrived-departure")
+    ResponseResult arrivedDeparture(@RequestBody OrderRequest orderRequest);
 }
