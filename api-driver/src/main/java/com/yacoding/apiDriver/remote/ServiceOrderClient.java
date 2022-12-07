@@ -36,4 +36,12 @@ public interface ServiceOrderClient {
      */
     @RequestMapping(method = RequestMethod.POST, value = "/order/pick-up-passenger")
     ResponseResult pickUpPassenger(@RequestBody OrderRequest orderRequest);
+
+    /**
+     * 乘客到达目的地，行程终止
+     * @param orderRequest
+     * @return
+     */
+    @RequestMapping(method = RequestMethod.POST,value ="/order/passenger-getoff")
+    ResponseResult passengerGetoff(@RequestBody OrderRequest orderRequest);
 }
