@@ -28,4 +28,12 @@ public interface ServiceOrderClient {
      */
     @RequestMapping(method = RequestMethod.POST, value = "/order/arrived-departure")
     ResponseResult arrivedDeparture(@RequestBody OrderRequest orderRequest);
+
+    /**
+     * 司机接到乘客
+     * @param orderRequest
+     * @return
+     */
+    @RequestMapping(method = RequestMethod.POST, value = "/order/pick-up-passenger")
+    ResponseResult pickUpPassenger(@RequestBody OrderRequest orderRequest);
 }

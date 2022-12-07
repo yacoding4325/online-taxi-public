@@ -5,6 +5,7 @@ import com.yacoding.internalcommon.dto.ResponseResult;
 import com.yacoding.internalcommon.request.OrderRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
 /**
  * @Author yaCoding
@@ -33,5 +34,14 @@ public class ApiDriverOrderInfoService {
      */
     public ResponseResult arrivedDeparture(OrderRequest orderRequest) {
         return serviceOrderClient.arrivedDeparture(orderRequest);
+    }
+
+    /**
+     * 司机接到乘客
+     * @param orderRequest
+     * @return
+     */
+    public ResponseResult pickUpPassenger(@RequestBody OrderRequest orderRequest) {
+        return serviceOrderClient.pickUpPassenger(orderRequest);
     }
 }
