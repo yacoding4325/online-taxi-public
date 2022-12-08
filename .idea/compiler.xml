@@ -17,6 +17,7 @@
         <module name="service-order" />
         <module name="service-passenger-user" />
         <module name="serice-map" />
+        <module name="service-pay" />
         <module name="api-driver" />
       </profile>
     </annotationProcessing>
@@ -35,6 +36,7 @@
       <module name="service-driver-user" options="-parameters" />
       <module name="service-order" options="-parameters" />
       <module name="service-passenger-user" options="-parameters" />
+      <module name="service-pay" options="-parameters" />
       <module name="service-price" options="-parameters" />
       <module name="service-sse-push" options="-parameters" />
       <module name="service-verificationcode" options="-parameters" />
