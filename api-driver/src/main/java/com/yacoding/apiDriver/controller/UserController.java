@@ -2,12 +2,10 @@ package com.yacoding.apiDriver.controller;
 
 import com.yacoding.apiDriver.service.UserService;
 import com.yacoding.internalcommon.dto.DriverUser;
+import com.yacoding.internalcommon.dto.DriverUserWorkStatus;
 import com.yacoding.internalcommon.dto.ResponseResult;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @Author yaCoding
@@ -23,6 +21,11 @@ public class UserController {
     @PutMapping("/user")
     public ResponseResult updateUser(@RequestBody DriverUser driverUser){
         return userService.updateUser(driverUser);
+    }
+
+    @PostMapping("/driver-user-work-status")
+    public ResponseResult changeWorkStatus(@RequestBody DriverUserWorkStatus driverUserWorkStatus){
+        return userService.changeWorkStatus(driverUserWorkStatus);
     }
 
 
