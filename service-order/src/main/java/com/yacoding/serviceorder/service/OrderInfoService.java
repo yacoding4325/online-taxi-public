@@ -588,4 +588,18 @@ public class OrderInfoService {
 
     }
 
+    /**
+     * 司机发起收款
+     * @param orderRequest
+     * @return
+     */
+    public ResponseResult pushPayInfo(OrderRequest orderRequest) {
+        Long orderId = orderRequest.getOrderId();
+
+        OrderInfo orderInfo = orderInfoMapper.selectById(orderId);
+        orderInfo.setOrderStatus(OrderConstants.TO_START_PAY);
+        orderInfoMapper.updateById(orderInfo);
+        return ResponseResult.success();
+    }
+
 }
