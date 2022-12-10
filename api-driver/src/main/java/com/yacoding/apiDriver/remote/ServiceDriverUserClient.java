@@ -1,9 +1,6 @@
 package com.yacoding.apiDriver.remote;
 
-import com.yacoding.internalcommon.dto.Car;
-import com.yacoding.internalcommon.dto.DriverUser;
-import com.yacoding.internalcommon.dto.DriverUserWorkStatus;
-import com.yacoding.internalcommon.dto.ResponseResult;
+import com.yacoding.internalcommon.dto.*;
 import com.yacoding.internalcommon.responese.DriverUserExistsResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
@@ -26,5 +23,8 @@ public interface ServiceDriverUserClient {
 
     @RequestMapping(method = RequestMethod.POST, value="/driver-user-work-status")
     public ResponseResult changeWorkStatus(@RequestBody DriverUserWorkStatus driverUserWorkStatus);
+
+    @GetMapping("/driver-car-binding-relationship")
+    public ResponseResult<DriverCarBindingRelationship> getDriverCarRelationShip(@RequestParam String driverPhone);
 
 }
