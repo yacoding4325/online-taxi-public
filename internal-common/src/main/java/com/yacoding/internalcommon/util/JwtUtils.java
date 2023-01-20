@@ -39,7 +39,6 @@ public class JwtUtils {
         map.put(JWT_TOKEN_TYPE, tokenType);
         // 防止每次生成的token一样。
         map.put(JWT_TOKEN_TIME, Calendar.getInstance().getTime().toString());
-
         JWTCreator.Builder builder = JWT.create();
         // 整合map
         map.forEach(
@@ -49,7 +48,6 @@ public class JwtUtils {
         );
         // 整合过期时间
 //        builder.withExpiresAt(date);
-
         // 生成 token
         String sign = builder.sign(Algorithm.HMAC256(SIGN));
 
