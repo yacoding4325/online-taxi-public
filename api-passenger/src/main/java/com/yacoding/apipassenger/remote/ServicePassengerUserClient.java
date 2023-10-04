@@ -2,7 +2,7 @@ package com.yacoding.apipassenger.remote;
 
 import com.yacoding.internalcommon.dto.PassengerUser;
 import com.yacoding.internalcommon.dto.ResponseResult;
-import com.yacoding.apipassenger.request.VerificationCodeDTO;
+import com.yacoding.internalcommon.request.VerificationCodeDTO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;

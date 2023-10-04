@@ -6,7 +6,7 @@ import com.yacoding.internalcommon.constant.CommonStatusEnum;
 import com.yacoding.internalcommon.constant.IdentityConstants;
 import com.yacoding.internalcommon.constant.TokenConstants;
 import com.yacoding.internalcommon.dto.ResponseResult;
-import com.yacoding.apipassenger.request.VerificationCodeDTO;
+import com.yacoding.internalcommon.request.VerificationCodeDTO;
 import com.yacoding.internalcommon.responese.NumberCodeResponse;
 import com.yacoding.internalcommon.responese.TokenResponse;
 import com.yacoding.internalcommon.util.JwtUtils;
