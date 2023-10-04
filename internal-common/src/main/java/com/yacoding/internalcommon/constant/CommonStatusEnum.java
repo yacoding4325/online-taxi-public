@@ -73,6 +73,10 @@ public enum CommonStatusEnum {
 
     ORDER_CANCEL_ERROR(1603, "订单取消失败"),
 
+    /**
+     * 统一验证提示 1700-1799
+     */
+    VALIDATION_EXCEPTION(1700,"统一验证框架的错误提示"),
 
     /**
      * 成功
