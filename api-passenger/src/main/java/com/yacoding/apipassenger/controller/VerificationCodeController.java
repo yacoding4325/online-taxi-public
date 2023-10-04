@@ -1,10 +1,11 @@
 package com.yacoding.apipassenger.controller;
 
+import com.yacoding.apipassenger.request.CheckVerificationCodeDTO;
+import com.yacoding.apipassenger.request.SendVerificationCodeDTO;
 import com.yacoding.apipassenger.service.VerificationCodeService;
 import com.yacoding.internalcommon.dto.ResponseResult;
-import com.yacoding.internalcommon.request.VerificationCodeDTO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,8 +20,8 @@ public class VerificationCodeController {
     @Autowired
     private VerificationCodeService verificationCodeService;
 
-    @GetMapping("/verification-code")
-    public ResponseResult verificationCode(@RequestBody VerificationCodeDTO verificationCodeDTO){
+    @PostMapping("/verification-code")
+    public ResponseResult verificationCode(@Validated @RequestBody SendVerificationCodeDTO verificationCodeDTO){
 
         String passengerPhone = verificationCodeDTO.getPassengerPhone();
         return verificationCodeService.generatorCode(passengerPhone);
@@ -28,10 +29,10 @@ public class VerificationCodeController {
     }
 
     @PostMapping("/verification-code-check")
-    public ResponseResult checkVerificationCode(@RequestBody VerificationCodeDTO verificationCodeDTO){
+    public ResponseResult checkVerificationCode(@Validated @RequestBody CheckVerificationCodeDTO checkVerificationCodeDTO){
 
-        String passengerPhone = verificationCodeDTO.getPassengerPhone();
-        String verificationCode = verificationCodeDTO.getVerificationCode();
+        String passengerPhone = checkVerificationCodeDTO.getPassengerPhone();
+        String verificationCode = checkVerificationCodeDTO.getVerificationCode();
 
         System.out.println("手机号"+passengerPhone+",验证码："+verificationCode);
 
