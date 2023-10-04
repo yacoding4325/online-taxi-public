@@ -36,4 +36,5 @@ public @interface DateTimeRange {
      * 判断用户输入的参数在当前时间之后
      */
     public final static String IS_BEFORE = "isBefore";
+
 }
